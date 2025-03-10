@@ -1,0 +1,11 @@
+﻿@if (!string.IsNullOrWhiteSpace(IconName))
+{
+    <i class="bi @(IconName)"></i>
+}
+
+@code {
+    [Parameter, EditorRequired] public string? IconName { get; set; }
+}
+@code {
+    
+}

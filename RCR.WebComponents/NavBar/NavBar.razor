@@ -1,0 +1,28 @@
+﻿@using RCR.WebComponents.Utilities
+@inherits PolymorphComponent
+
+<div class="collapse navbar-collapse" id="@(Id)">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        @foreach (var navBarItem in LeftNavBarItems)
+        {
+            @(navBarItem.RenderFragment)
+        }
+    </ul>
+    <ul class="navbar-nav mb-2 mb-lg-0">
+        @foreach (var navBarItem in RightNavBarItems)
+        {
+            @(navBarItem.RenderFragment)
+        }
+    </ul>
+</div>
+
+@code {
+    public List<PolymorphComponent> LeftNavBarItems { get; set; } = [];
+    public List<PolymorphComponent> RightNavBarItems { get; set; } = [];
+    public string Id => HtmlIdBuilder.GetRandomId();
+
+    protected override Task OnInitializedAsync()
+    {
+        return base.OnInitializedAsync();
+    }
+}

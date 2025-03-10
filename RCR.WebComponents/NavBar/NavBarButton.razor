@@ -1,0 +1,17 @@
+﻿@using RCR.WebComponents.Icons
+@using Microsoft.AspNetCore.Components.Routing
+@inherits PolymorphComponent
+<li class="nav-item">
+    <NavLink href="@(NavBarButtonData?.Url ?? "#")" class="nav-link">
+        <Icon IconName="@(NavBarButtonData?.IconName)"/>
+        @if (!string.IsNullOrWhiteSpace(NavBarButtonData?.Text))
+        {
+            @(" " + NavBarButtonData?.Text)
+        }
+    </NavLink>
+</li>
+
+@code
+{
+    [Parameter, EditorRequired] public NavBarButtonData? NavBarButtonData { get; set; }
+}

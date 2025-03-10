@@ -1,0 +1,17 @@
+@import 'ririsharper/tokens/themed-tokens';
+
+@each $theme, $properties in $themes {
+    [data-bs-theme="#{$theme}"] {
+        --bs-body-bg: #{map-get($properties, body-bg)};
+        --bs-body-color: #{map-get($properties, body-color)};
+
+        --bs-link-color-rgb: #{map-get($properties, link-color-rgb)};
+        --bs-link-hover-color-rgb: #{map-get($properties, link-hover-color-rgb)};
+        --bs-tertiary-bg-rgb: #{map-get($properties, tertiary-bg-rgb)};
+
+        .dropdown-menu {
+            --bs-dropdown-link-active-bg: #{map-get($properties, dropdown-link-active-bg)};
+            --bs-dropdown-link-active-color: #{map-get($properties, dropdown-link-active-color)};
+        }
+    }
+}

@@ -1,0 +1,18 @@
+@import 'tokens/themed-tokens';
+@import 'tokens/other-tokens';
+
+.tab-caption {
+    font-size: $ririsharp-caption-font-size;
+    margin-top: $ririsharp-caption-margin-top;
+}
+
+@each $theme, $properties in $themes {
+    [data-bs-theme="#{$theme}"] {
+        .tab-caption {
+            color: map-get($properties, caption-color);
+        }
+        .tab-ref-color {
+            color: map-get($properties, tab-ref-color);
+        }
+    }
+}

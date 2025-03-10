@@ -1,0 +1,23 @@
+﻿@using RCR.WebComponents.Icons
+@inherits PolymorphComponent
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">
+        <Icon IconName="@(IconName)"/>
+        @if (!string.IsNullOrWhiteSpace(Text))
+        {
+            @(" " + Text)
+        }
+    </a>
+    <ul class="dropdown-menu">
+        @foreach (var dropdownMenuItem in DropdownMenuItems ?? [])
+        {
+            @(dropdownMenuItem.RenderFragment)
+        }
+    </ul>
+</li>
+
+@code {
+    public string? Text { get; set; }
+    public string? IconName { get; set; }
+    public IEnumerable<PolymorphComponent>? DropdownMenuItems { get; set; }
+}

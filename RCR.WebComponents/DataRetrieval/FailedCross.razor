@@ -1,0 +1,12 @@
+﻿<div class="@PositionClasses @Classes">
+    <i class="text-danger bi bi-x" style="font-size: @(SizeInRem)rem;"></i>
+    <span class="text-danger">@ChildContent</span>
+</div>
+
+@code {
+
+    [Parameter] public int SizeInRem { get; set; } = 3;
+    [Parameter] public string Classes { get; set; } = "";
+    [Parameter] public string PositionClasses { get; set; } = "d-flex flex-column justify-content-center align-items-center h-100 gap-3";
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+}

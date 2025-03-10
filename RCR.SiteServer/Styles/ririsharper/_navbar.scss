@@ -1,0 +1,51 @@
+@import 'tokens/themed-tokens';
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-span {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-size: 100%;
+}
+
+.navbar-nav .nav-link.active {
+    text-decoration: underline;
+}
+
+@media (hover: hover) {
+    .nav-link:hover {
+        text-decoration: underline;
+    }
+}
+
+@each $theme, $properties in $themes {
+    [data-bs-theme="#{$theme}"] {
+        .navbar-brand svg path {
+            fill: map-get($properties, logo-fill);
+        }
+        .navbar-toggler .navbar-toggler-span svg path {
+            stroke: map-get($properties, navbar-toggler-color);
+        }
+
+        .navbar-toggler:focus .navbar-toggler-span svg path {
+            stroke: map-get($properties, navbar-toggler-focus-color);
+        }
+
+        .nav-link {
+            color: map-get($properties, nav-link-color);
+        }
+
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link.show {
+            color: map-get($properties, navbar-active-color);
+        }
+    }
+}

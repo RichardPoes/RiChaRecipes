@@ -1,0 +1,29 @@
+@import 'tokens/other-tokens';
+@import 'tokens/themed-tokens';
+
+.post-banner-image {
+    text-align: center;
+    padding-top: 1em;
+}
+
+.post-banner-image img {
+    max-height: $ririsharp-post-banner-max-image-height;
+    height: auto;
+}
+
+figure:not(:has(figcaption)) {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.figure-caption {
+    font-size: $ririsharp-caption-font-size;
+}
+
+@each $theme, $properties in $themes {
+    [data-bs-theme="#{$theme}"] {
+        .figure-caption {
+            color: map-get($properties, caption-color);
+        }
+    }
+}

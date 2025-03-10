@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Components.Routing
+@inherits PolymorphComponent
+
+<li>
+    <NavLink Match="NavLinkMatch.All" class="dropdown-item" href="@(Url ?? "#")">@(Text ?? "")</NavLink>
+</li>
+
+@code
+{
+    public string? Url { get; set; }
+    public string? Text { get; set; }
+}

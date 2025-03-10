@@ -1,0 +1,47 @@
+@import 'tokens/other-tokens';
+@import 'tokens/themed-tokens';
+
+kbd {
+    position: relative;
+    padding: $ririsharp-key-border-width + 1;
+    margin-right: 2 * $ririsharp-key-border-width;
+    white-space: nowrap; // Prevents the start of kbd on a different line than the rest
+}
+
+kbd::before {
+    content: "";
+    position: absolute;
+    top: -1 * $ririsharp-key-border-width;
+    left: -1 * $ririsharp-key-border-width;
+    right: -1 * $ririsharp-key-border-width;
+    bottom: -1 * $ririsharp-key-border-width;
+    border-radius: calc(#{$ririsharp-border-radius} - #{$ririsharp-key-border-width});
+    z-index: -1;
+}
+
+kbd::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: -2 * $ririsharp-key-border-width;
+    bottom: -2 * $ririsharp-key-border-width;
+    border-radius: calc(#{$ririsharp-border-radius} - #{$ririsharp-key-border-width});
+    z-index: -2;
+}
+
+
+@each $theme, $properties in $themes {
+    [data-bs-theme="#{$theme}"] {
+        $key-border-color-1: map-get($properties, key-border-color-1);
+        $key-border-color-2: map-get($properties, key-border-color-2);
+
+        kbd::before {
+            background: linear-gradient(to bottom right, $key-border-color-2, $key-border-color-1);
+        }
+
+        kbd::after {
+            background: linear-gradient(to bottom right, $key-border-color-2, $key-border-color-1);
+        }
+    }
+}

@@ -1,0 +1,73 @@
+﻿@using Microsoft.Extensions.Logging
+@inject ILogger<AsyncComponent> Logger
+@switch (_dataRetrievalStatus)
+{
+    case DataRetrievalStatus.Retrieving:
+        if (LoadingFragment is not null)
+        {
+            @LoadingFragment
+        }
+        else
+        {
+            <LoadingSpinner/>
+        }
+        break;
+    case DataRetrievalStatus.Failed:
+        if (FailedFragment is not null)
+        {
+            @FailedFragment
+        }
+        else
+        {
+            var failedText = string.IsNullOrEmpty(FailedText) ? "Oops!" : FailedText;
+            <FailedCross>
+                @(failedText)
+            </FailedCross>
+        }
+        break;
+    case DataRetrievalStatus.Success:
+            @SuccesFragment
+        break;
+    case DataRetrievalStatus.Unknown:
+        if (UnknownFragment is not null)
+        {
+            @UnknownFragment
+        }
+        break;
+    default:
+        throw new ArgumentOutOfRangeException();
+}
+
+@code {
+    private DataRetrievalStatus _dataRetrievalStatus;
+
+    [Parameter, EditorRequired] public Func<Task> DataRetrievalFunction { get; set; } = () => Task.CompletedTask;
+    [Parameter, EditorRequired] public RenderFragment? SuccesFragment { get; set; }
+    [Parameter] public string? FailedText { get; set; }
+    [Parameter] public RenderFragment? FailedFragment { get; set; }
+    [Parameter] public RenderFragment? LoadingFragment { get; set; }
+    [Parameter] public RenderFragment? UnknownFragment { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        await RetrieveData();
+    }
+
+    public async Task RetrieveData()
+    {
+        _dataRetrievalStatus = DataRetrievalStatus.Retrieving;
+        StateHasChanged();
+
+        try
+        {
+            await DataRetrievalFunction();
+            _dataRetrievalStatus = DataRetrievalStatus.Success;
+        }
+        catch(Exception e)
+        {
+            Logger.LogError(e, "Something went wrong during retrieving data");
+            _dataRetrievalStatus = DataRetrievalStatus.Failed;
+        }
+    }
+}

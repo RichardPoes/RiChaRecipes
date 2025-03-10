@@ -1,0 +1,48 @@
+@import 'tokens/themed-tokens';
+@import 'tokens/other-tokens';
+
+code {
+    padding-left: $ririsharp-code-padding-x;
+    padding-right: $ririsharp-code-padding-x;
+    padding-top: $ririsharp-code-padding-y;
+    padding-bottom: $ririsharp-code-padding-y;
+    border-radius: $ririsharp-code-border-radius;
+    white-space: nowrap;
+}
+
+.code-highlighting-banner {
+    justify-content: space-between;
+    display: flex;
+    border-top-left-radius: $ririsharp-code-block-border-radius;
+    border-top-right-radius: $ririsharp-code-block-border-radius;
+    align-items: center;
+    align-items: center;
+    padding: $ririsharp-code-block-header-padding;
+    font-family: $ririsharp-code-font;
+}
+
+.hljs {
+    border-bottom-right-radius: $ririsharp-code-block-border-radius;
+    border-bottom-left-radius: $ririsharp-code-block-border-radius;
+    white-space: pre;
+}
+
+.code-caption {
+    font-size: $ririsharp-caption-font-size;
+    margin-top: $ririsharp-caption-margin-top;
+}
+
+@each $theme, $properties in $themes {
+    [data-bs-theme="#{$theme}"] {
+        code {
+            background-color: map-get($properties, code-bg);
+            color: map-get($properties, code-color);
+        }
+        .code-highlighting-banner {
+            background-color: map-get($properties, code-block-header-bg);
+        }
+        .code-ref-color {
+            color: map-get($properties, code-ref-color);
+        }
+    }
+}

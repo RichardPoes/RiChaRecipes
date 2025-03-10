@@ -1,0 +1,14 @@
+﻿{
+  "Arguments": "--error-css --style=compressed --source-map",
+  "SourceFolder": "Styles",
+  "TargetFolder": "wwwroot",
+  "GenerateScopedCss": false,
+  "Configurations": {
+    "Release": {
+      "Arguments": "--no-error-css --style=compressed --no-source-map"
+    },
+    "Debug": {
+      "Arguments": "--error-css --style=compressed --no-source-map"
+    }
+  }
+}

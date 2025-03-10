@@ -1,0 +1,85 @@
+// Quicksand
+@font-face {
+    font-family: "Quicksand";
+    src: url("/fonts/Quicksand/Quicksand_Book.woff2") format("woff2"),
+         url("/fonts/Quicksand/Quicksand_Book.woff") format("woff"),
+         url("/fonts/Quicksand/Quicksand_Book.otf") format("otf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: "Quicksand";
+    src: url("/fonts/Quicksand/Quicksand_Book_Oblique.woff2") format("woff2"),
+         url("/fonts/Quicksand/Quicksand_Book_Oblique.woff") format("woff"),
+         url("/fonts/Quicksand/Quicksand_Book_Oblique.otf") format("otf");
+    font-weight: 400;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: "Quicksand";
+    src: url("/fonts/Quicksand/Quicksand_Bold.woff2") format("woff2"),
+         url("/fonts/Quicksand/Quicksand_Bold.woff") format("woff"),
+         url("/fonts/Quicksand/Quicksand_Bold.otf") format("otf");
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: "Quicksand";
+    src: url("/fonts/Quicksand/Quicksand_Bold_Oblique.woff2") format("woff2"),
+         url("/fonts/Quicksand/Quicksand_Bold_Oblique.woff") format("woff"),
+         url("/fonts/Quicksand/Quicksand_Bold_Oblique.otf") format("otf");
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url("/fonts/Quicksand/Quicksand_Light.woff2") format("woff2"),
+         url("/fonts/Quicksand/Quicksand_Light.woff") format("woff"),
+         url("/fonts/Quicksand/Quicksand_Light.otf") format("otf");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url("/fonts/Quicksand/Quicksand_Light_Oblique.woff2") format("woff2"),
+         url("/fonts/Quicksand/Quicksand_Light_Oblique.woff") format("woff"),
+         url("/fonts/Quicksand/Quicksand_Light_Oblique.otf") format("otf");
+    font-weight: 200;
+    font-style: italic;
+}
+
+// CascadiaCodePL
+@font-face {
+    font-family: "CascadiaCode";
+    src: url("/fonts/CascadiaCode/CascadiaCodePL-Regular.woff2") format("woff2"),
+         url("/fonts/CascadiaCode/CascadiaCodePL-Regular.ttf") format("truetype"),
+         url("/fonts/CascadiaCode/CascadiaCodePL-Regular.otf") format("otf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "CascadiaCode";
+    src: url("/fonts/CascadiaCode/CascadiaCodePL-Italic.woff2") format("woff2"),
+         url("/fonts/CascadiaCode/CascadiaCodePL-Italic.ttf") format("truetype"),
+         url("/fonts/CascadiaCode/CascadiaCodePL-Italic.otf") format("otf");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "CascadiaCode";
+    src: url("/fonts/CascadiaCode/CascadiaCodePL-Bold.woff2") format("woff2"),
+         url("/fonts/CascadiaCode/CascadiaCodePL-Bold.ttf") format("truetype"),
+         url("/fonts/CascadiaCode/CascadiaCodePL-Bold.otf") format("otf");
+    font-weight: 700;
+    font-style: normal;
+}

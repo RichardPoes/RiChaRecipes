@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+        <Nullable>enable</Nullable>
+        <TargetFramework>net9.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AspNetCore.SassCompiler"/>
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\RCR.JavaScript\RCR.JavaScript.csproj" />
+        <ProjectReference Include="..\RCR.WebComponents\RCR.WebComponents.csproj"/>
+        <ProjectReference Include="..\RCR.Site\RCR.Site.csproj"/>
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,27 @@
+@import 'tokens/colors';
+
+.title-lines {
+    overflow: hidden;
+    text-align: center;
+}
+
+.title-lines::before,
+.title-lines::after {
+    background-color: $primary;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.title-lines::before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+
+.title-lines::after {
+    left: 0.5em;
+    margin-right: -50%;
+}

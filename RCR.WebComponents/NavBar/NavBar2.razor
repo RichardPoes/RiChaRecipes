@@ -1,0 +1,25 @@
+﻿@using RCR.WebComponents.Utilities
+<div class="collapse navbar-collapse" id="@(Id)">
+    @if (LeftMenuPart is not null)
+    {
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            @(LeftMenuPart)
+        </ul>
+    }
+    @if (RightMenuPart is not null)
+    {
+        <ul class="navbar-nav mb-2 mb-lg-0">
+            @(RightMenuPart)
+        </ul>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment? LeftMenuPart { get; set; }
+
+    [Parameter]
+    public RenderFragment? RightMenuPart { get; set; }
+
+    public string Id => HtmlIdBuilder.GetRandomId();
+}

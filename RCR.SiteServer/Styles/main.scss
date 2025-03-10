@@ -1,0 +1,28 @@
+// Order matters here, first we we override bootstrap variables
+@import "bootstrap-overrides";
+@import "bootstrap-color-overrides";
+
+// Then we inject bootstrap
+@import "bootstrap-5.3.3/bootstrap";
+
+// Now we overwrite bootstrap theme variables
+@import "bootstrap-theming-overrides";
+
+// Rest of the code goes here
+@import 'ririsharper/fonts';
+
+@import 'ririsharper/containers';
+@import 'ririsharper/navbar';
+
+@import 'ririsharper/headings';
+@import 'ririsharper/code';
+@import 'ririsharper/keys';
+@import 'ririsharper/links';
+@import 'ririsharper/images';
+@import 'ririsharper/equations';
+@import 'ririsharper/icons';
+@import 'ririsharper/tables';
+
+h1:focus {
+  outline: none;
+}

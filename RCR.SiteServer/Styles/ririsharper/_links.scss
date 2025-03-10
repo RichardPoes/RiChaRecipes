@@ -1,0 +1,50 @@
+@import 'tokens/other-tokens';
+@import 'tokens/themed-tokens'; 
+
+a {
+    text-decoration: none;
+}
+
+@media (hover: hover) {
+    a:hover {
+        text-decoration: underline;
+    }
+
+    a .badge:hover {
+        text-decoration: none;
+    }
+
+    .border.border-hover-primary:hover {
+        border-color: $primary !important;
+    }
+
+    .border.border-hover-secondary:hover {
+        border-color: $secondary !important;
+    }
+
+    .border.border-hover-tertiary:hover {
+        border-color: $tertiary !important;
+    }
+}
+
+.icon-link {
+    align-items: baseline;
+    gap: $ririsharp-icon-link-gap;
+    padding-left: $ririsharp-icon-link-padding-start;
+}
+
+@each $theme, $properties in $themes {
+    [data-bs-theme="#{$theme}"] {
+        .img-ref-color {
+            color: map-get($properties, img-ref-color);
+        }
+
+        .eq-ref-color {
+            color: map-get($properties, eq-ref-color);
+        }
+
+        .ext-ref-color {
+            color: map-get($properties, ext-ref-color);
+        }
+    }
+}
